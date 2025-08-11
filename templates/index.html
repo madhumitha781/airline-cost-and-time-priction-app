@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>K-Means Airline Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>K-Means Airline Finder</h1>
+        <form method="POST" action="/result">
+            <label>Enter State (Source City):</label>
+            <input type="text" name="state_name" placeholder="e.g. Delhi" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>

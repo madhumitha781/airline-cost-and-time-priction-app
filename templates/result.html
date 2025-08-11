@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    {% if error %}
+        <h2>{{ error }}</h2>
+        <a href="/">Go Back</a>
+    {% else %}
+        <h2>Cluster {{ cluster_id }} results for "{{ state }}"</h2>
+        <table>
+            <tr>
+                <th>Airline</th>
+                <th>Flight</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Price</th>
+                <th>Duration</th>
+                <th>Days Left</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{ row.airline }}</td>
+                <td>{{ row.flight }}</td>
+                <td>{{ row.source_city }}</td>
+                <td>{{ row.destination_city }}</td>
+                <td>{{ row.price }}</td>
+                <td>{{ row.duration }}</td>
+                <td>{{ row.days_left }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/">Go Back</a>
+    {% endif %}
+</div>
+</body>
+</html>
